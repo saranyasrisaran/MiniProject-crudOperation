@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="ui menu">
+                    <div class="header item">
+                        <a href="/" class="link">Home</a>
+                    </div>
+                    <a class="item">Blog</a>
+                    <a class="item">Contact</a>
+                    <a class="item">About</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form action="/edit/<%- crud_demos._id%>" class="ui form" method="POST">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui field">
+                            <label for="Name" class="ui label header green">Enter the user name</label>
+                            <input type="text" name="Name" placeholder="Enter the user name" value="<%- crud_demos.Name %>" id="Name">
+                        </div>
+                        <div class="ui field">
+                            <label for="Age" class="ui label header green">Enter the user Age</label>
+                            <input type="text" name="Age" placeholder="Enter the user Age" value="<%- crud_demos.Age %>" id="Age">
+                        </div>
+                        <div class="ui field">
+                            <label for="Location" class="ui label header green">Enter the user Location</label>
+                            <input type="text" name="Location" placeholder="Enter the user Location" value="<%- crud_demos.Location %>" id="Location">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui fluid field">
+                            <input type="submit" value="Submit" class="ui button green fluid">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+    </div>
+
+    <script src="semantic.min.js"></script>
+</body>
+</html>

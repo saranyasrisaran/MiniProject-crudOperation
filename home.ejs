@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="ui menu">
+                    <div class="header item">
+                        <a href="/" class="link">Home</a>
+                    </div>
+                    <a class="item">Blog</a>
+                    <a class="item">Contact</a>
+                    <a class="item">About</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form action="/add" class="ui form" method="POST">
+                <div class="ui three fields">
+                    <div class="field">
+                        <label for="Name" class="ui label header green">Enter the user name</label>
+                        <input type="text" name="Name">
+                    </div>
+                    <div class="field">
+                        <label for="Age" class="ui label header green">Enter the user Age</label>
+                        <input type="text" name="Age">
+                    </div>
+                    <div class="field">
+                        <label for="Location" class="ui label header green">Enter the user Location</label>
+                        <input type="text" name="Location">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button green fluid">
+                </div>
+            </form>
+            <br><br>
+            <table class="ui table green">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% crud_demos.forEach((user)=> { %>
+                      <tr>
+                          <td><%- user.Name %></td>
+                          <td><%- user.Age %></td>
+                          <td><%- user.Location %></td>
+                          <td><a class="ui purple button" href="/edit/<%- user._id%>"><i class="edit outline icon"></i></a></td>
+                          <td><a class="ui red button" href="/delete/<%- user._id%>"><i class="minus icon"></i></a></td>
+                      </tr>
+                    <% }); %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="semantic.min.js"></script>
+</body>
+</html>
